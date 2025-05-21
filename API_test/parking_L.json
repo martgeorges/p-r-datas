@@ -1,0 +1,24 @@
+{
+  "currentTotalOccupancy": 0.3129032258064516129032258065,
+  "currentPMROccupancy": 0.0769230769230769230769230769,
+  "currentECarOccupancy": 0.3888888888888888888888888889,
+  "openingHours": null,
+  "typeOfAccess": null,
+  "currentTotalFreeSpaces": 426,
+  "currentPMRFreeSpaces": 12,
+  "currentECarFreeSpaces": 11,
+  "totalPMRCapacity": 13,
+  "totalECarCapacity": 18,
+  "id": "P8K2N",
+  "name": "Luxembourg Gare",
+  "address": {
+    "streetAndNumber": "23 Place de la gare",
+    "city": "Luxembourg",
+    "zipCode": "1616"
+  },
+  "totalCapacity": 620,
+  "wgS84Coordinate": {
+    "longitude": 6.132407022219915,
+    "latitude": 49.59731246674892
+  }
+}
