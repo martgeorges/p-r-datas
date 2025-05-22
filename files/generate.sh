@@ -16,8 +16,8 @@ while true; do
     curl -s "https://pr-mobile-a.cfl.lu/OpenData/ParkAndRide/MZJDR" -o data/parking_H.json
 
     printf "+----------------------------+------------+----------+---------------+------------------+------------+----------------+------------------+------------+----------------+\n"
-    printf "| %-26s | %-10s | %-8s | %-13s | %-16s | %-10s | %-14s | %-16s | %-10s | %-14s |\n" \
-        "P+R" "Capacité" "Occupé" "Occupation %" \
+    printf "| %-26s | %-10s | %-9s | %-13s | %-17s | %-11s | %-14s | %-16s | %-11s | %-14s |\n" \
+        "P+R" "Max" "Occupées" "Occupation %" \
         "Places Élec" "Occupées" "Occupation %" \
         "Places PMR" "Occupées" "Occupation %"
     printf "+----------------------------+------------+----------+---------------+------------------+------------+----------------+------------------+------------+----------------+\n"
@@ -26,16 +26,16 @@ while true; do
 <html>
 <head>
     <meta http-equiv="refresh" content="16">
-    <title>État des parkings</title>
+    <title>Parking datas</title>
 </head>
 <body>
     <div align="center">
         <h2>P+R datas - $(date)</h2>
         <table border="1" cellspacing="0" cellpadding="5">
         <tr>
-            <th>P + R</th><th>Capacity Max</th><th>Occupied</th><th>% Occupied</th>
-            <th>Capacity max elec</th><th>Elec occ.</th><th>% Elec occ.</th>
-            <th>Capacity max PMR</th><th>PMR occ.</th><th>% PMR occ.</th>
+            <th>P + R</th><th>Max Capacity</th><th>Occupied</th><th>% Occupied</th>
+            <th>Max Capacity elec</th><th>Elec occ.</th><th>% Elec occ.</th>
+            <th>Max Capacity PMR</th><th>PMR occ.</th><th>% PMR occ.</th>
         </tr>
 EOF
 
@@ -75,6 +75,6 @@ EOF
 </body>
 </html>
 EOF
-
+    echo "---> [OK] ✅"
     sleep 15
 done
