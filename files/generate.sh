@@ -65,9 +65,12 @@ EOF
             "$name" "$total" "$occupied" "$pct_occupied" \
             "$elec_tot" "$elec_occ" "$pct_elec" \
             "$pmr_tot" "$pmr_occ" "$pct_pmr" >> "$HTML_FILE"
+    
     done
 
     printf "+----------------------------+------------+----------+---------------+------------------+------------+----------------+------------------+------------+----------------+\n"
+
+
 
     cat <<EOF >> "$HTML_FILE"
         </table>
@@ -75,6 +78,7 @@ EOF
 </body>
 </html>
 EOF
+
     echo "---> [OK] ✅"
     sleep 15
 done
