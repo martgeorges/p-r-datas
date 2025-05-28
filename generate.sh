@@ -7,7 +7,7 @@ while true; do
     clear
     echo "---------------------- $(date) ------------------------"
 
-    # Téléchargement JSON (URLs fixes)
+    # Téléchargement JSON
     curl -s "https://pr-mobile-a.cfl.lu/OpenData/ParkAndRide/RDWRW" -o data/parking_R.json
     curl -s "https://pr-mobile-a.cfl.lu/OpenData/ParkAndRide/FQMPE" -o data/parking_M.json
     curl -s "https://pr-mobile-a.cfl.lu/OpenData/ParkAndRide/YAX3J" -o data/parking_B.json
@@ -27,6 +27,35 @@ while true; do
 <head>
     <meta http-equiv="refresh" content="16">
     <title>Parking datas</title>
+        <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .box {
+            flex: 1;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .box h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .box p {
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <div align="center">
@@ -74,6 +103,38 @@ EOF
 
     cat <<EOF >> "$HTML_FILE"
         </table>
+    </div>
+    <div align="center" style="margin-top: 40px;">
+        <h1>P+R datas graphics</h1>
+    </div>
+    <div class="container">
+EOF
+    for file in data/parking_B.json; do
+        name=$(jq -r '.name' "$file")
+done
+    cat <<EOF >> "$HTML_FILE"
+        <div class="box">
+            <h2>$name</h2>
+            <p>datas will fit here</p>
+        </div>
+EOF
+    for file in data/parking_R.json; do
+        name=$(jq -r '.name' "$file")
+done
+    cat <<EOF >> "$HTML_FILE"
+        <div class="box">
+            <h2>$name</h2>
+            <p>datas will fit here</p>
+        </div>
+EOF
+    for file in data/parking_L.json; do
+        name=$(jq -r '.name' "$file")
+done
+    cat <<EOF >> "$HTML_FILE"
+        <div class="box">
+            <h2>$name</h2>
+            <p>datas will fit here</p>
+        </div>
     </div>
 </body>
 </html>
