@@ -47,6 +47,7 @@ while true; do
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
+            height: 245px;
         }
         .box h2 {
             margin-top: 0;
@@ -59,7 +60,7 @@ while true; do
 </head>
 <body>
     <div align="center">
-        <h2>P+R datas - $(date)</h2>
+        <h1>P+R datas - $(date)</h1>
         <table border="1" cellspacing="0" cellpadding="5">
         <tr>
             <th>P + R</th><th>Max Capacity</th><th>Occupied</th><th>% Occupied</th>
@@ -118,7 +119,7 @@ done
             <p>datas will fit here</p>
         </div>
 EOF
-    for file in data/parking_R.json; do
+    for file in data/parking_H.json; do
         name=$(jq -r '.name' "$file")
 done
     cat <<EOF >> "$HTML_FILE"
@@ -136,6 +137,34 @@ done
             <p>datas will fit here</p>
         </div>
     </div>
+    <div class="container" style="margin-top: 30px;">
+EOF
+    for file in data/parking_M.json; do
+        name=$(jq -r '.name' "$file")
+done
+    cat <<EOF >> "$HTML_FILE"
+        <div class="box">
+            <h2>$name</h2>
+            <p>datas will fit here</p>
+        </div>
+EOF
+    for file in data/parking_R.json; do
+        name=$(jq -r '.name' "$file")
+done
+    cat <<EOF >> "$HTML_FILE"
+        <div class="box">
+            <h2>$name</h2>
+            <p>datas will fit here</p>
+        </div>
+EOF
+    for file in data/parking_T.json; do
+        name=$(jq -r '.name' "$file")
+done
+    cat <<EOF >> "$HTML_FILE"
+        <div class="box">
+            <h2>$name</h2>
+            <p>datas will fit here</p>
+        </div>
 </body>
 </html>
 EOF
