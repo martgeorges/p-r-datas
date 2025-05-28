@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p data docs
-HTML_FILE="docs/index.html"
+mkdir -p data
+HTML_FILE="index.html"
 
 while true; do
     clear
